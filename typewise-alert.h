@@ -11,16 +11,16 @@ typedef enum {
   MAX_ALERTER_TYPE
 } AlertTarget;
 
-typedef struct {
-  CoolingType coolingType;
-} BatteryCharacter;
-
 typedef enum {
   PASSIVE_COOLING,
   HI_ACTIVE_COOLING,
   MED_ACTIVE_COOLING,
   MAX_COOLING_TYPE
 } CoolingType;
+
+typedef struct {
+  CoolingType coolingType;
+} BatteryCharacter;
 
 typedef enum {
   NORMAL,
