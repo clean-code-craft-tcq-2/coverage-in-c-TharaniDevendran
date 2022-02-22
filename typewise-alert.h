@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Alerter_cfg.h"
-
 typedef enum {
   SENTTOCONTROLLER,
   SENTTOEMAIL
