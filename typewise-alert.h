@@ -1,6 +1,7 @@
 #pragma once
 
-typedef enum {
+typedef enum 
+{
   SENTTOCONTROLLER,
   SENTTOEMAIL
 }AlertMessage;
