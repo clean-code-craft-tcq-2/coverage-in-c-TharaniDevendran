@@ -3,6 +3,9 @@
 #include "test/catch.hpp"
 #include "typewise-alert.h"
 
+
+ //PASSIVE_COOLING and different temperature level
+
 TEST_CASE("Battery character belongs to PASSIVE COOLING -Temperature breach high value")
 {
  BatteryCharacter batteryChar = {PASSIVE_COOLING};
@@ -19,10 +22,7 @@ TEST_CASE("Battery char belongs to PASSIVE COOLING -Normal")
   REQUIRE(inferBreach(batteryChar, 10) == NORMAL);
 }
 
-
-/*******************************************************************************************/
-/******** Battery Character belongs to  HI ACTIVE COOLING and different temperature level***/
-/*******************************************************************************************/
+ //HI ACTIVE COOLING and different temperature level
 
 TEST_CASE("Battery character belongs to HI ACTIVE COOLING -Temperature breach high value")
 {
@@ -40,10 +40,7 @@ TEST_CASE("Battery char belongs to HI ACTIVE COOLING  -NORMAL")
   REQUIRE(inferBreach(batteryChar, 22) == NORMAL);
 }
 
-/********************************************************************************************/
-/****** Battery Character belongs to  MID ACTIVE COOLING and different temperature level*****/
-/********************************************************************************************/
-
+// MID ACTIVE COOLING and different temperature level
 
 TEST_CASE("Battery character belongs to MED ACTIVE COOLING -Temperature breach high value_1")
 {
@@ -74,9 +71,7 @@ TEST_CASE("Battery char belongs to MED ACTIVE COOLING -Temperature in normal")
   REQUIRE(inferBreach(batteryChar, 22) == NORMAL);
 }
 
-/****************************************************/
-/********** TEST Alert message send to controller*****/
-/*****************************************************/
+//Alert message send to controller
 
 TEST_CASE("CheckAndAlert-TOOHIGH -SENTTOCONTROLLER") 
 {
@@ -84,10 +79,8 @@ TEST_CASE("CheckAndAlert-TOOHIGH -SENTTOCONTROLLER")
   REQUIRE(checkAndAlert(TO_CONTROLLER,batteryChar,55) == SENTTOCONTROLLER);
 }
 
+//  Alert message send to Email
 
-/************************************************/
-/********** Test Alert message send to Email*****/
-/************************************************/
 TEST_CASE("CheckAndAlert-TOOHIGH -SENTTOEMAIL") 
 {
   BatteryCharacter batteryChar = {PASSIVE_COOLING};
